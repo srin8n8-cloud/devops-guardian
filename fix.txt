@@ -1,0 +1,11 @@
+Error:
+flask not found
+
+Fix:
+It seems like Flask is not installed in your Python environment. You can fix this issue by installing Flask using the following command:
+
+```
+pip install Flask
+```
+
+After installing Flask, try running your application again.
