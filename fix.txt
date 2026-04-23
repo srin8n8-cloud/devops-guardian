@@ -1,0 +1,11 @@
+Error:
+ModuleNotFoundError: No module named numpy
+
+Fix:
+To fix the `ModuleNotFoundError: No module named numpy` issue, you can install the `numpy` module by running the following command:
+
+```
+pip install numpy
+```
+
+Make sure you have `pip` installed on your system before running the command.
