@@ -1,0 +1,5 @@
+Error:
+docker: command not found
+
+Fix:
+Please install Docker on your machine and ensure that it is properly set up in your system PATH. You can download and install Docker from the official Docker website according to your operating system.
