@@ -1,0 +1,37 @@
+
+Error:
+
+2026-07-03T09:15:12Z INFO  Starting application...
+2026-07-03T09:15:13Z INFO  Connecting to PostgreSQL...
+2026-07-03T09:15:14Z ERROR connection refused: dial tcp 10.96.0.12:5432: connect: connection refused
+2026-07-03T09:15:14Z FATAL Failed to initialize database
+2026-07-03T09:15:15Z INFO  Exiting with status code 1
+
+kubectl describe pod payment-service
+
+State:          Waiting
+Reason:         CrashLoopBackOff
+Last State:     Terminated
+Exit Code:      1
+Restart Count:  9
+
+
+Fix:
+
+The error "connection refused: dial tcp 10.96.0.12:5432: connect: connection refused" indicates that the application is unable to connect to the PostgreSQL server at the specified IP address and port. 
+
+Here are some steps you can take to resolve this issue:
+
+1. **Check PostgreSQL Availability**: Ensure that the PostgreSQL server is running and is accessible from the application pod. Check the IP address and port to confirm that the PostgreSQL server is available.
+
+2. **Check Network Policies**: If there are network policies in place that restrict traffic, make sure that the application pod is allowed to communicate with the PostgreSQL server on port 5432.
+
+3. **Check Pod Environment Variables**: Verify that the application pod has the correct environment variables set for connecting to the PostgreSQL server (e.g., connection string, host, port, username, password).
+
+4. **Pod Logs**: Check the logs of the PostgreSQL server to see if there are any issues or errors that might be causing the connection to be refused.
+
+5. **Check PostgreSQL Configuration**: Double-check the PostgreSQL configuration to ensure that it is listening on the correct IP address and port. Check for any firewall rules that might be blocking the connection.
+
+6. **Database Initialization**: If the database is not initialized properly, it might cause connection issues. Verify that the database is up and running with the correct schemas and data before the application starts.
+
+After identifying and fixing the root cause based on the above suggestions, you can restart the pod and monitor the logs to ensure that the application connects successfully to the PostgreSQL server.
