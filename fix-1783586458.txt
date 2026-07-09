@@ -1,0 +1,20 @@
+
+Error:
+
+Traceback (most recent call last):
+  File "app.py", line 2, in <module>
+    import numpy
+ModuleNotFoundError: No module named 'numpy'
+
+
+Fix:
+
+The error indicates that the `numpy` module is not installed on the system. To fix this, you can install the `numpy` module using a package manager like `pip`. 
+
+To install `numpy` using `pip`, you can run the following command in your terminal:
+
+```bash
+pip install numpy
+```
+
+This command will download and install the `numpy` module. After the installation is complete, you can run your `app.py` script again, and the error should be resolved.
