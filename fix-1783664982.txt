@@ -1,0 +1,19 @@
+
+Error:
+
+401 Unauthorized
+Bad credentials
+
+
+Fix:
+
+The error "401 Unauthorized - Bad credentials" typically indicates that the credentials provided for authentication are invalid. To resolve this issue, you should double-check the credentials being used for authentication, such as API keys, usernames, passwords, tokens, etc., depending on the system or service you are trying to access.
+
+Here are some steps you can take to fix this issue:
+1. Make sure you are using the correct username and password or API key for authentication.
+2. Verify that the credentials have not expired or been revoked.
+3. Check for any typos or extra spaces in the credentials.
+4. If you are using tokens, make sure they are correctly generated and in the right format.
+5. Ensure that the authentication method being used is supported by the system you are trying to access.
+
+By verifying and correcting the credentials being used, you should be able to resolve the "401 Unauthorized - Bad credentials" error.
