@@ -1,0 +1,17 @@
+
+Error:
+
+ModuleNotFoundError: No module named numpy
+
+
+Fix:
+
+The error "ModuleNotFoundError: No module named numpy" indicates that the Python module `numpy` is not installed on the system where the code is trying to import it.
+
+To fix this issue, you can install the `numpy` module using a package manager such as pip. To do this, open a terminal or command prompt and run the following command:
+
+```bash
+pip install numpy
+```
+
+This command will download and install the `numpy` module along with any dependencies it requires. After the installation is complete, you should be able to run the Python code that requires the `numpy` module without any issues.
