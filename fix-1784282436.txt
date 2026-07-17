@@ -1,0 +1,35 @@
+
+Error:
+
+2026-07-03T09:15:12Z INFO  Starting application...
+2026-07-03T09:15:13Z INFO  Connecting to PostgreSQL...
+2026-07-03T09:15:14Z ERROR connection refused: dial tcp 10.96.0.12:5432: connect: connection refused
+2026-07-03T09:15:14Z FATAL Failed to initialize database
+2026-07-03T09:15:15Z INFO  Exiting with status code 1
+
+kubectl describe pod payment-service
+
+State:          Waiting
+Reason:         CrashLoopBackOff
+Last State:     Terminated
+Exit Code:      1
+Restart Count:  9
+
+
+Fix:
+
+The error message indicates that the application is failing to connect to the PostgreSQL database as it is receiving a connection refused error. Looking at the pod's status, it seems to be in a CrashLoopBackOff state with a restart count of 9, indicating a continuous restart loop.
+
+Here is a practical short fix you can implement to address this issue:
+
+1. **Check Database Availability**: Ensure that the PostgreSQL database service is running and accessible from the application's namespace. Verify that the IP address (10.96.0.12) and port (5432) are correct.
+
+2. **Check Connection Configuration**: Validate the connection parameters (IP, port, credentials) used by the application to connect to the database. Ensure that they are correctly configured in the application's configuration files or environment variables.
+
+3. **Security Groups and Firewall**: Check if there are any security groups or firewall rules blocking the communication between the application pod and the PostgreSQL database. Make sure that the necessary network rules are in place to allow traffic on the specified port.
+
+4. **Debugging**: You can troubleshoot further by checking the logs of the PostgreSQL server to see if it's receiving the connection requests and if there are any errors on that side.
+
+5. **Ensure Correct Database Endpoint**: If the database is running inside the Kubernetes cluster, verify that the service endpoint for the PostgreSQL database is correctly set in the application configuration.
+
+After making the necessary corrections, redeploy the application pod and monitor its logs to ensure that the connection to the PostgreSQL database is successful.
