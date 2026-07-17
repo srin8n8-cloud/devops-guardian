@@ -1,0 +1,19 @@
+
+Error:
+
+
+API_KEY not found
+
+
+Fix:
+
+If you are receiving an error stating "API_KEY not found," it indicates that the application is trying to access an API key that is missing or not properly configured in the environment.
+
+To fix this error, you should check the following steps:
+
+1. Ensure that the API key is correctly set as an environment variable.
+2. Verify that the API key is being referenced correctly in the application code.
+3. Confirm that the environment variable is loaded or sourced properly before the application is run.
+4. Restart the application after updating the API key to ensure it is being used.
+
+Make sure to secure the API key and avoid hardcoding it in the application code. By following these steps, you should be able to resolve the "API_KEY not found" error.
