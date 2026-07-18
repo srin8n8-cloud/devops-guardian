@@ -1,0 +1,34 @@
+
+Error:
+
+Warning  BackOff    4m15s (x23 over 15m) kubelet  Back-off restarting failed container
+Normal   Pulled     4m14s                  kubelet  Successfully pulled image "myapp:v1"
+Normal   Created    4m14s                  kubelet  Created container app
+Normal   Started    4m14s                  kubelet  Started container app
+
+panic: failed to connect to PostgreSQL
+
+pq: password authentication failed for user "admin"
+
+goroutine 1 [running]:
+main.main()
+    /app/main.go:58 +0x4c5
+
+
+Fix:
+
+The error message indicates that the application failed to connect to PostgreSQL due to a password authentication failure for the user "admin."
+
+To fix this issue, you need to ensure that the credentials for connecting to the PostgreSQL database are correctly configured in the application's configuration file or environment variables.
+
+Here are the steps to resolve the issue:
+
+1. Verify the PostgreSQL connection details: Check the PostgreSQL host, port, database name, user, and password that the application is using to connect to the database.
+
+2. Update the application configuration: Update the application configuration file or environment variables with the correct PostgreSQL connection details. Ensure that the username and password provided in the configuration match those configured in the PostgreSQL database.
+
+3. Restart the application: After updating the configuration, redeploy the application container so that it picks up the new configuration with the correct PostgreSQL credentials.
+
+4. Test the connection: Test the application to ensure that it can now successfully connect to the PostgreSQL database without any authentication errors.
+
+By following these steps and ensuring that the application has the correct PostgreSQL credentials, you should be able to resolve the "password authentication failed" error and establish a successful connection to the PostgreSQL database.
