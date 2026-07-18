@@ -1,0 +1,21 @@
+
+Error:
+
+failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1
+
+
+Fix:
+
+The error message indicates that the process `npm run build` failed with an exit code of 1. An exit code of 1 typically means that there was an error during the build process.
+
+To troubleshoot and fix this issue, follow these steps:
+
+1. Check the build logs: Look at the output of the `npm run build` command to identify the specific error that occurred during the build process. The error message in the logs will provide more information about what went wrong.
+
+2. Resolve the error: Once you have identified the specific error from the build logs, address the root cause of the issue. Common reasons for build failures include missing dependencies, syntax errors in code, or configuration issues.
+
+3. Retry the build: After fixing the error, run the `npm run build` command again to verify that the issue has been resolved. Ensure that the build completes successfully without any errors.
+
+4. Automate the process: To prevent similar errors in the future, consider automating the build process using a CI/CD pipeline. This will help streamline the build and deployment process, making it more reliable and efficient.
+
+By following these steps, you should be able to identify and resolve the error that is causing the build process to fail with an exit code of 1.
